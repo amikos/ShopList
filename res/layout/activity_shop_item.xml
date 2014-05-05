@@ -15,7 +15,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_add_shop_item_name"
-        android:inputType="text" 
+        android:inputType="text"
         android:textSize="15sp"
         android:textStyle="bold|italic"
         android:typeface="serif" >
@@ -34,10 +34,10 @@
             android:layout_height="wrap_content"
             android:gravity="left"
             android:text="@string/count"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="15sp"
-	        android:textStyle="italic"
-	        android:typeface="serif"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textStyle="italic"
+            android:typeface="serif" />
 
         <EditText
             android:id="@+id/unit_count"
@@ -45,20 +45,57 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dip"
             android:ems="10"
-            android:text=""
             android:inputType="numberDecimal"
-	        android:textSize="15sp"
-	        android:textStyle="bold|italic"
-	        android:typeface="serif" />
+            android:text=""
+            android:textSize="15sp"
+            android:textStyle="bold|italic"
+            android:typeface="serif" />
 
         <Spinner
             android:id="@+id/spnr_unit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dip" 
-	        android:textSize="15sp"
-	        android:textStyle="bold|italic"
-	        android:typeface="serif"/>
+            android:layout_marginLeft="20dip"
+            android:textSize="15sp"
+            android:textStyle="bold|italic"
+            android:typeface="serif" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/unit_label_priority_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="@string/priority_type_label"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:typeface="serif" />
+
+        <RadioGroup
+            android:id="@+id/menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@+id/priority_low"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/priority_low"
+                android:text="@string/priority_low" />
+
+            <RadioButton
+                android:id="@+id/priority_middle"
+                android:text="@string/priority_middle" />
+
+            <RadioButton
+                android:id="@+id/priority_high"
+                android:text="@string/priority_high" />
+        </RadioGroup>
     </LinearLayout>
 
 </LinearLayout>

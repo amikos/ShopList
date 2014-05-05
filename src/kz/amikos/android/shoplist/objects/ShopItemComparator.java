@@ -7,6 +7,7 @@ public class ShopItemComparator {
 	private static DateComparator dateComparator;
 	private static NameComparator nameComparator;
 	private static BoughtComparator boughtComparator;
+	private static CustomComparator customComparator;
 	
 	public static Comparator<ShopItem> getDateComparator(){
 		if (dateComparator == null){
@@ -33,6 +34,14 @@ public class ShopItemComparator {
 		return boughtComparator;
 	}
 	
+	public static Comparator<ShopItem> getCustomComparator(){
+		if (customComparator == null){
+			customComparator = new CustomComparator();
+		}
+		
+		return customComparator;
+	}
+	
 	private static class NameComparator implements Comparator<ShopItem> {
 
 		@Override
@@ -57,6 +66,19 @@ public class ShopItemComparator {
 		public int compare(ShopItem shopItem1, ShopItem shopItem2) {
 			if (shopItem1.isBought()==shopItem2.isBought()){
 				return shopItem1.getCreatedDate().compareTo(shopItem2.getCreatedDate());
+			}else{
+				return Boolean.valueOf(shopItem1.isBought()).compareTo(Boolean.valueOf(shopItem2.isBought()));
+			}
+		}
+
+	}
+	
+	private static class CustomComparator implements Comparator<ShopItem> {
+
+		@Override
+		public int compare(ShopItem shopItem1, ShopItem shopItem2) {
+			if (shopItem1.isBought()==shopItem2.isBought()){
+				return shopItem2.getPriorityType().compareTo(shopItem1.getPriorityType());
 			}else{
 				return Boolean.valueOf(shopItem1.isBought()).compareTo(Boolean.valueOf(shopItem2.isBought()));
 			}

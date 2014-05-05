@@ -2,12 +2,23 @@ package kz.amikos.android.shoplist.objects;
 
 import java.util.Date;
 
+import kz.amikos.android.shoplist.enums.PriorityType;
+
 public class ShopItem {
 	private String name;
 	private boolean bought;
 	private int count;
 	private int unitType;
 	private Date createdDate;
+	private PriorityType priorityType = PriorityType.LOW;
+
+	public PriorityType getPriorityType() {
+		return priorityType;
+	}
+
+	public void setPriorityType(PriorityType priorityType) {
+		this.priorityType = priorityType;
+	}
 
 	public Date getCreatedDate() {
 		return createdDate;

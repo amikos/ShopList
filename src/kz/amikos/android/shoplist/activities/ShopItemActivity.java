@@ -4,11 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import kz.amikos.android.shoplist.R;
-import kz.amikos.android.shoplist.R.array;
-import kz.amikos.android.shoplist.R.id;
-import kz.amikos.android.shoplist.R.layout;
-import kz.amikos.android.shoplist.R.menu;
-import kz.amikos.android.shoplist.R.string;
+import kz.amikos.android.shoplist.enums.PriorityType;
 import kz.amikos.android.shoplist.objects.AppContext;
 import kz.amikos.android.shoplist.objects.ShopItem;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -26,6 +22,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.Spinner;
 
 public class ShopItemActivity extends Activity {
@@ -39,6 +37,8 @@ public class ShopItemActivity extends Activity {
 	private Spinner spinner;
 	
 	private EditText edTxtUnitCount;
+	
+	private RadioGroup mRadioGroup;
 
 	@SuppressLint("NewApi")
 	@Override
@@ -49,6 +49,9 @@ public class ShopItemActivity extends Activity {
 		actionType = getIntent().getExtras().getInt(AppContext.ACTION_TYPE);
 		
 		edTxtItemName = (EditText) findViewById(R.id.itemName);
+		
+		mRadioGroup = (RadioGroup) findViewById(R.id.menu);
+		mRadioGroup.setOnCheckedChangeListener(new RaadioButtonCheckedListener());
 		
 		shopList = ((AppContext) getApplicationContext())
 				.getShopList();
@@ -185,6 +188,8 @@ public class ShopItemActivity extends Activity {
 						.getCreatedDate().getTime());
 				editor.putBoolean(AppContext.FIELD_IS_BOUGHT, shopItem
 						.isBought());
+				editor.putInt(AppContext.FIELD_PRIORITY_TYPE, shopItem
+						.getPriorityType().getIndex());
 				editor.commit();
 				
 				((AppContext) getApplicationContext()).updateAllWidgets();
@@ -222,6 +227,28 @@ public class ShopItemActivity extends Activity {
 			
 			edTxtUnitCount.setText(String.valueOf(shopItem.getCount()));
 			
+			switch (shopItem.getPriorityType()) {
+			case LOW:
+				
+				mRadioGroup.check(R.id.priority_low);
+				
+				break;
+			case MIDDLE:
+				
+				mRadioGroup.check(R.id.priority_middle);
+							
+				break;
+			case HIGH:
+				
+				mRadioGroup.check(R.id.priority_high);
+				
+				break;
+
+			default:
+				break;
+			}
+			
+			
 			break;
 
 		default:
@@ -230,6 +257,38 @@ public class ShopItemActivity extends Activity {
 		
 		// выделяем элемент 
         spinner.setSelection(shopItem.getUnitType());
+	}
+	
+	private class RaadioButtonCheckedListener implements OnCheckedChangeListener{
+
+		@Override
+		public void onCheckedChanged(RadioGroup group, int checkedId) {
+			
+			switch (checkedId) {
+			case R.id.priority_low:
+				
+				shopItem.setPriorityType(PriorityType.LOW);
+				
+				break;
+				
+			case R.id.priority_middle:
+				
+				shopItem.setPriorityType(PriorityType.MIDDLE);
+				
+				break;
+				
+			case R.id.priority_high:
+	
+				shopItem.setPriorityType(PriorityType.HIGH);
+				
+				break;
+
+			default:
+				break;
+			}
+			
+		}
+		
 	}
 
 }

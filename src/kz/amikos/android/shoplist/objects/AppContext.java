@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.Date;
 
 import kz.amikos.android.shoplist.R;
+import kz.amikos.android.shoplist.enums.PriorityType;
 import kz.amikos.android.shoplist.widget.WidgetProvider;
 
 import android.app.Application;
@@ -28,6 +29,7 @@ public class AppContext extends Application {
 	public static final String FIELD_UNIT_TYPE = "unitType";
 	public static final String FIELD_CREATED_DATE = "createdDate";
 	public static final String FIELD_IS_BOUGHT = "isBought";
+	public static final String FIELD_PRIORITY_TYPE = "priorityType";
 	
 	public static final int GOOGLE_VOICE_REQUEST_CODE = 1234;
 	
@@ -66,6 +68,7 @@ public class AppContext extends Application {
 						FIELD_UNIT_TYPE, 0));
 				shopItem.setBought(sharedPref.getBoolean(
 						FIELD_IS_BOUGHT, false));
+				shopItem.setPriorityType(PriorityType.values()[sharedPref.getInt(FIELD_PRIORITY_TYPE, 0)]);
 				shopList.add(shopItem);
 			}
 		}
@@ -83,7 +86,7 @@ public class AppContext extends Application {
 	 * Сортировка листа
 	 */
 	public void sortShopList(){
-		Collections.sort(shopList, ShopItemComparator.getBoughtComparator());
+		Collections.sort(shopList, ShopItemComparator.getCustomComparator());
 	}
 	
 	/**

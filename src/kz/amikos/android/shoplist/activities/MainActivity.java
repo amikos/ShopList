@@ -4,10 +4,6 @@ import java.io.File;
 import java.util.ArrayList;
 
 import kz.amikos.android.shoplist.R;
-import kz.amikos.android.shoplist.R.id;
-import kz.amikos.android.shoplist.R.layout;
-import kz.amikos.android.shoplist.R.menu;
-import kz.amikos.android.shoplist.R.string;
 import kz.amikos.android.shoplist.adapters.ShopListAdapter;
 import kz.amikos.android.shoplist.objects.AppContext;
 import kz.amikos.android.shoplist.objects.ShopItem;
@@ -232,6 +228,9 @@ public class MainActivity extends Activity {
 		
 		editor.putBoolean(AppContext.FIELD_IS_BOUGHT, shopItem
 				.isBought());
+		
+		editor.putInt(AppContext.FIELD_PRIORITY_TYPE, shopItem
+				.getPriorityType().getIndex());
 		
 		editor.commit();
 		

@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class ShopListAdapter extends ArrayAdapter<ShopItem> {
@@ -33,6 +34,8 @@ public class ShopListAdapter extends ArrayAdapter<ShopItem> {
 					parent, false);
 
 			ViewHolder viewHolder = new ViewHolder();
+			
+			viewHolder.listRowLayout = (RelativeLayout) convertView.findViewById(R.id.list_row_layout);
 
 			viewHolder.itemName = (TextView) convertView
 					.findViewById(R.id.txt_item_name);
@@ -50,6 +53,29 @@ public class ShopListAdapter extends ArrayAdapter<ShopItem> {
 		ViewHolder holder = (ViewHolder) convertView.getTag();
 
 		ShopItem shopItem = getItem(position);
+		
+		switch (shopItem.getPriorityType()) {
+		case LOW:
+
+			holder.listRowLayout.setBackgroundResource(R.color.light_gray_trans);
+			
+			break;
+			
+		case MIDDLE:
+			
+			holder.listRowLayout.setBackgroundResource(R.color.light_yellow_trans);
+
+			break;
+			
+		case HIGH:
+			
+			holder.listRowLayout.setBackgroundResource(R.color.light_red_trans);
+
+			break;
+
+		default:
+			break;
+		}
 
 		holder.itemName.setText(shopItem.getName());
 		
@@ -81,6 +107,7 @@ public class ShopListAdapter extends ArrayAdapter<ShopItem> {
 		public ImageView itemImage;
 		public TextView itemUnitInfo;
 		public TextView itemCreatedDate;
+		public RelativeLayout listRowLayout;
 	}
 	
 }

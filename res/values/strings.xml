@@ -24,5 +24,11 @@
     <string name="confirm_delete">Вы действительно хотите удалить?</string>
     <string name="confirm_delete_all">Вы действительно хотите очистить список?</string>
     <string name="cancel">Отмена</string>
+    
+    <string name="priority_type_label">Приоритет</string>
+    
+    <string name="priority_low">Низкий</string>
+    <string name="priority_middle">Средний</string>
+    <string name="priority_high">Высокий</string>
 
 </resources>
