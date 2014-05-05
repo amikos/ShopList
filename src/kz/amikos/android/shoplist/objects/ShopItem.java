@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class ShopItem {
 	private String name;
-	private Integer number;
 	private boolean bought;
 	private int count;
 	private int unitType;
@@ -40,14 +39,6 @@ public class ShopItem {
 
 	public void setBought(boolean bought) {
 		this.bought = bought;
-	}
-
-	public Integer getNumber() {
-		return number;
-	}
-
-	public void setNumber(Integer number) {
-		this.number = number;
 	}
 
 	public String getName() {

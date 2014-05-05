@@ -1,8 +1,14 @@
-package kz.amikos.android.shoplist;
+package kz.amikos.android.shoplist.activities;
 
 import java.io.File;
 import java.util.ArrayList;
 
+import kz.amikos.android.shoplist.R;
+import kz.amikos.android.shoplist.R.array;
+import kz.amikos.android.shoplist.R.id;
+import kz.amikos.android.shoplist.R.layout;
+import kz.amikos.android.shoplist.R.menu;
+import kz.amikos.android.shoplist.R.string;
 import kz.amikos.android.shoplist.objects.AppContext;
 import kz.amikos.android.shoplist.objects.ShopItem;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -43,8 +49,6 @@ public class ShopItemActivity extends Activity {
 		actionType = getIntent().getExtras().getInt(AppContext.ACTION_TYPE);
 		
 		edTxtItemName = (EditText) findViewById(R.id.itemName);
-		
-		System.out.println("actionType=" + actionType);
 		
 		shopList = ((AppContext) getApplicationContext())
 				.getShopList();

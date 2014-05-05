@@ -2,8 +2,8 @@ package kz.amikos.android.shoplist.widget;
 
 import java.util.Arrays;
 
-import kz.amikos.android.shoplist.MainActivity;
 import kz.amikos.android.shoplist.R;
+import kz.amikos.android.shoplist.activities.MainActivity;
 import kz.amikos.android.shoplist.objects.AppContext;
 import kz.amikos.android.shoplist.objects.ShopItem;
 
