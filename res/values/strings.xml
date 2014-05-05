@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ShopList</string>
+    <string name="action_settings">Settings</string>
+    <string name="select_dialog">Выберите результат</string>
+    <string name="hint_add_shop_item_name">наименование покупки</string>
+    <string name="title_activity_shop_item">ShopItem</string>
+    
+    <string name="count">Кол-во</string>
+    
+    <string name="empty_string">Записей нет</string>
+
+    <string-array name="unit_types">
+        <item>шт.</item>
+        <item>кг.</item>
+        <item>литр</item>
+        <item>метр</item>
+        <item>уп.</item>
+    </string-array>
+
+    <string name="save">Сохранить</string>
+    <string name="delete">Удалить</string>
+    <string name="confirm_delete">Вы действительно хотите удалить?</string>
+    <string name="confirm_delete_all">Вы действительно хотите очистить список?</string>
+    <string name="cancel">Отмена</string>
+
+</resources>

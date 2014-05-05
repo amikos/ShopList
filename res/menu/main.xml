@@ -1,0 +1,6 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:id="@+id/cleareAll" android:title="@string/delete" android:showAsAction="always" android:icon="@drawable/eraser"></item>
+    <item android:id="@+id/add_by_voice" android:title="@string/delete" android:showAsAction="always" android:icon="@drawable/microphone"></item>
+    
+</menu>
