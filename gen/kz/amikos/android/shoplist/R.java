@@ -57,22 +57,21 @@ public final class R {
         public static final int top_bg_list=0x7f020017;
     }
     public static final class id {
-        public static final int add_by_voice=0x7f0b0016;
+        public static final int add_by_voice=0x7f0b0015;
         public static final int add_item=0x7f0b0002;
-        public static final int appName=0x7f0b0012;
-        public static final int cleareAll=0x7f0b0015;
-        public static final int delete=0x7f0b0017;
+        public static final int appName=0x7f0b0011;
+        public static final int cleareAll=0x7f0b0014;
+        public static final int delete=0x7f0b0016;
         public static final int empty_view=0x7f0b0004;
         public static final int frameAddItem=0x7f0b0000;
         public static final int image_item=0x7f0b000b;
         public static final int itemName=0x7f0b0005;
         public static final int layout_image=0x7f0b000a;
-        public static final int layout_list_view=0x7f0b0013;
-        public static final int layout_widget_app_icon=0x7f0b0011;
-        public static final int list_recog=0x7f0b000f;
+        public static final int layout_list_view=0x7f0b0012;
+        public static final int layout_widget_app_icon=0x7f0b0010;
         public static final int list_row_layout=0x7f0b0009;
         public static final int listview=0x7f0b0003;
-        public static final int save=0x7f0b0018;
+        public static final int save=0x7f0b0017;
         public static final int spnr_unit=0x7f0b0008;
         public static final int txt_item_name=0x7f0b000c;
         public static final int txt_new_item=0x7f0b0001;
@@ -80,15 +79,14 @@ public final class R {
         public static final int txt_unit_info=0x7f0b000d;
         public static final int unit_count=0x7f0b0007;
         public static final int unit_label=0x7f0b0006;
-        public static final int widget=0x7f0b0010;
-        public static final int widget_list_view=0x7f0b0014;
+        public static final int widget=0x7f0b000f;
+        public static final int widget_list_view=0x7f0b0013;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int activity_shop_item=0x7f030001;
         public static final int custom_listview_row=0x7f030002;
-        public static final int voice_recog=0x7f030003;
-        public static final int widget_layout=0x7f030004;
+        public static final int widget_layout=0x7f030003;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;
